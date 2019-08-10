@@ -1,0 +1,20 @@
+package co.com.soaint.finanmovilsa.rules;
+
+import co.com.soaint.finanmovilsa.modelo.bo.Credito;
+import co.com.soaint.finanmovilsa.modelo.bo.Persona;
+
+rule "sin amortizar"
+no-loop
+ruleflow-group "validar razon"
+when 
+    $p: Persona(this != null)
+    $c: Credito(razon == "Capital sin amortizar")
+then 
+   modify ($p) {
+		setPrimerNombre("DENEGADO"),
+		setSegundoNombre("DENEGADO"),
+		setPrimerApellido("DENEGADO"),
+		setSegundoApellido("DENEGADO")
+	}
+	System.out.println("Person: " + $p.getPrimerNombre());
+end
