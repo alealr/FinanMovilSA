@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_0C4B02C2-1315-4CB5-ACAD-E629903B5064" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_E0458929-E872-4D0B-B9BC-0CB62C08315B" name="ReglaCreditoDMNME" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_0C4B02C2-1315-4CB5-ACAD-E629903B5064">
+  <dmn:extensionElements/>
+  <dmn:inputData id="_0875B53D-86C9-4D1E-8308-DA0D2A9FC8FB" name="valorCredito">
+    <dmn:variable id="_58B677E4-FEB0-4772-A759-773639CF2DAA" name="valorCredito"/>
+  </dmn:inputData>
+  <dmn:decision id="_A8401DD5-8CF2-42DC-8B35-C296CFCF0F1C" name="Decision">
+    <dmn:variable id="_C067DD8A-0750-415A-81CF-EC55BE6E7989" name="Decision" typeRef="string"/>
+    <dmn:informationRequirement id="_1BD85FEB-5923-4781-950B-2AFD59C5E5EE">
+      <dmn:requiredInput href="#_0875B53D-86C9-4D1E-8308-DA0D2A9FC8FB"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_21964FBB-4AA7-445E-9105-20A1F6701300" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_C705C6C1-AF5B-4FF6-8649-9FB2BD746FC2">
+        <dmn:inputExpression id="_655E2089-EF86-4952-83A6-D1C038D5C8B2" typeRef="number">
+          <dmn:text>valorCredito</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_1CCA741D-568B-41DA-9CEB-6ACD4191612E" typeRef="string"/>
+      <dmn:rule id="_178A7840-5D5A-446C-9483-46B51BAFF7BE">
+        <dmn:description>"Monto excedido"</dmn:description>
+        <dmn:inputEntry id="_B16829D8-5506-46A7-818B-588A43A16FA6">
+          <dmn:text>&gt; 10000000</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_817D444F-6FCC-4FCA-930F-01BCC8380369">
+          <dmn:text>"ME"</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_CD0DC955-D8A3-46AE-B6AE-D79B942456B3">
+        <dmn:description>"Continuar"</dmn:description>
+        <dmn:inputEntry id="_22F5285C-9867-4507-9607-5D9F9BF8B982">
+          <dmn:text>&lt; 10000000</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_F204DD1F-DE64-4A4C-BCE7-8E4A460CA9FA">
+          <dmn:text>"CO"</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_21964FBB-4AA7-445E-9105-20A1F6701300">
+            <kie:width>50.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>100.0</kie:width>
+            <kie:width>171.0</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-_0875B53D-86C9-4D1E-8308-DA0D2A9FC8FB" dmnElementRef="_0875B53D-86C9-4D1E-8308-DA0D2A9FC8FB" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="275" y="82" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_A8401DD5-8CF2-42DC-8B35-C296CFCF0F1C" dmnElementRef="_A8401DD5-8CF2-42DC-8B35-C296CFCF0F1C" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="275" y="189" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-_1BD85FEB-5923-4781-950B-2AFD59C5E5EE" dmnElementRef="_1BD85FEB-5923-4781-950B-2AFD59C5E5EE">
+        <di:waypoint x="375" y="107"/>
+        <di:waypoint x="275" y="214"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
