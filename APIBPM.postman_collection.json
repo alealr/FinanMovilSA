@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "94321958-90c8-4cb7-b556-ffdd92e352c5",
+		"name": "Api FinanMovil S.A",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "processes-by-container",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "wbadmin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "wbadmin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/kie-server/services/rest/server/containers/FinanMovilSA_1.0.0-SNAPSHOT/processes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kie-server",
+						"services",
+						"rest",
+						"server",
+						"containers",
+						"FinanMovilSA_1.0.0-SNAPSHOT",
+						"processes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "start-process-intance",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "wbadmin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "wbadmin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"numeroSolicitud\": \"1234567890\",\n\t\"estadoSolicitud\": \"true\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/kie-server/services/rest/server/containers/FinanMovilSA_1.0.0-SNAPSHOT/processes/src.main.resources.FinanMovilSA/instances",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kie-server",
+						"services",
+						"rest",
+						"server",
+						"containers",
+						"FinanMovilSA_1.0.0-SNAPSHOT",
+						"processes",
+						"src.main.resources.FinanMovilSA",
+						"instances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-task-instances-by-process-intance",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "wbadmin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "wbadmin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/kie-server/services/rest/server/queries/tasks/instances/process/391",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kie-server",
+						"services",
+						"rest",
+						"server",
+						"queries",
+						"tasks",
+						"instances",
+						"process",
+						"391"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "start-task-intance",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "wbadmin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "wbadmin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/kie-server/services/rest/server/containers/FinanMovilSA_1.0.0-SNAPSHOT/tasks/500/states/started",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kie-server",
+						"services",
+						"rest",
+						"server",
+						"containers",
+						"FinanMovilSA_1.0.0-SNAPSHOT",
+						"tasks",
+						"500",
+						"states",
+						"started"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "complete-task",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "wbadmin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "wbadmin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nombreMensajero\": \"Camilo Ramos\",\n\t\"documento\" : {\n        \"document-name\" : \"new.txt\",\n\t\t\"document-link\" : null,\n\t\t\"document-size\" : 17,\n\t\t\"document-last-mod\" : {\n\t\t\t\"java.util.Date\" : 1539936629148\n\t\t},\n\t\t\"document-content\" : \"anVzdCB0ZXh0IGNvbnRlbnQ=\"\n    },\n\t\"fechaEntrega\": 1539936629148\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/kie-server/services/rest/server/containers/FinanMovilSA_1.0.0-SNAPSHOT/tasks/500/states/completed?",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"kie-server",
+						"services",
+						"rest",
+						"server",
+						"containers",
+						"FinanMovilSA_1.0.0-SNAPSHOT",
+						"tasks",
+						"500",
+						"states",
+						"completed"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "wbadmin",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
