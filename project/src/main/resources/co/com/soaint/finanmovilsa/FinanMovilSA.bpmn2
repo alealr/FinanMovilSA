@@ -1488,7 +1488,7 @@ kcontext.setVariable("fechaActual", date);
       </bpmn2:extensionElements>
       <bpmn2:outgoing>_35BE538D-D8B3-4086-B237-CA0A53EBBD98</bpmn2:outgoing>
       <bpmn2:timerEventDefinition id="_zZrJvLxbEemrhPAx-ZZ_vg">
-        <bpmn2:timeDuration xsi:type="bpmn2:tFormalExpression" id="_zZrJvbxbEemrhPAx-ZZ_vg">PT1M</bpmn2:timeDuration>
+        <bpmn2:timeDuration xsi:type="bpmn2:tFormalExpression" id="_zZrJvbxbEemrhPAx-ZZ_vg">PT3M</bpmn2:timeDuration>
       </bpmn2:timerEventDefinition>
     </bpmn2:boundaryEvent>
   </bpmn2:process>
